@@ -2,7 +2,7 @@
     "compilerOptions": {
         "strict": true,
         "target": "es2015",
-        "module": "esnext",
+        "module": "CommonJS",
         "outDir": "./dist",
         "rootDir": "./src",
         "declaration": true,
