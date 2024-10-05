@@ -47,6 +47,9 @@ export default class TronSocket {
             this.socket.on('error', (error: EmitError) => {
                 reject(error)
             })
+            this.socket.on('connect_error', (error) => {
+                reject(error)
+            })
         })
     }
 
