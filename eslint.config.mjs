@@ -1,11 +1,16 @@
 import globals from 'globals'
 import pluginJs from '@eslint/js'
 import tsEslint from 'typescript-eslint'
+import jestEslint from 'eslint-plugin-jest'
 import prettierRecommended from 'eslint-plugin-prettier/recommended'
 
 export default [
     {
-        ignorePatterns: ['dist/**/*'],
+        env: {
+            node: true,
+            jest: true
+        },
+        files: ['src/**/*.ts'],
         rules: {
             semi: ['error', 'never'],
             'eol-last': ['error', 'always'],
@@ -17,6 +22,7 @@ export default [
         }
     },
     prettierRecommended,
+    jestEslint.recommended,
     pluginJs.configs.recommended,
     ...tsEslint.configs.recommended
 ]

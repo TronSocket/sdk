@@ -1,16 +1,16 @@
 {
     "compilerOptions": {
-        "target": "es2015",
-        "module": "es2015",
-        "declaration": true,
-        "declarationDir": "./dist/types",
         "strict": true,
-        "moduleResolution": "node",
-        "esModuleInterop": true,
-        "skipLibCheck": true,
-        "forceConsistentCasingInFileNames": true,
+        "target": "es2015",
+        "module": "esnext",
         "outDir": "./dist",
-        "rootDir": "./src"
+        "rootDir": "./src",
+        "declaration": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "moduleResolution": "node",
+        "declarationDir": "./dist",
+        "forceConsistentCasingInFileNames": true
     },
     "include": ["src/**/*"],
     "exclude": ["node_modules", "tests/*.test.ts"]
