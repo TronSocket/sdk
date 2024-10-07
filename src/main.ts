@@ -117,6 +117,14 @@ export default class TronSocket {
         this.unsubscribe(event, callback, filter)
     }
 
+    public error(callback: (error: EmitError) => void): void {
+        if (this.socket) {
+            this.socket.on('error', callback)
+        } else {
+            throw new Error('Socket not connected')
+        }
+    }
+
     isSolidityEvent(data: EventTypes['solidity']): data is SolidityEvent {
         return 'eventName' in data
     }
