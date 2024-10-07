@@ -56,8 +56,11 @@ export default class TronSocket {
     public async disconnect(): Promise<boolean> {
         return new Promise((resolve, reject) => {
             if (this.socket) {
+                this.socket.on('disconnect', () => {
+                    this.socket = null
+                    resolve(true)
+                })
                 this.socket.disconnect()
-                resolve(true)
             } else {
                 reject(new Error('Socket not connected'))
             }
