@@ -28,7 +28,7 @@ export default class TronSocket {
 
     private socket: Socket | null = null
 
-    private socketUrl: string = 'https://ws.tronsocket:com'
+    private socketUrl: string = 'https://socket.tronsocket.com'
 
     constructor(token: string, testnet: boolean = false) {
         this.token = token
