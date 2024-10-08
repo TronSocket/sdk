@@ -39,8 +39,10 @@ export default class TronSocket {
     public async connect(): Promise<boolean> {
         return new Promise((resolve, reject) => {
             this.socket = io(this.socketUrl, {
-                auth: { token: this.token },
-                query: { testnet: this.testnet }
+                query: {
+                    token: this.token,
+                    testnet: this.testnet
+                }
             })
             this.socket.on('ready', () => {
                 resolve(true)
