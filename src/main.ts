@@ -13,6 +13,7 @@ export * from '@tronsocket/types'
 type EmitError = {
     message: string
     code: number
+    key?: string
 }
 
 type Events = keyof EventTypes
