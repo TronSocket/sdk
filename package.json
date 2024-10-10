@@ -1,6 +1,6 @@
 {
     "name": "@tronsocket/sdk",
-    "version": "0.1.8",
+    "version": "0.1.9",
     "type": "module",
     "main": "dist/main.es.js",
     "module": "dist/main.es.js",
@@ -24,6 +24,14 @@
             "default": "./dist/main.es.js"
         }
     },
+    "keywords": [
+        "tron",
+        "socket",
+        "transaction",
+        "event",
+        "websocket",
+        "sdk"
+    ],
     "files": [
         "dist",
         "README.md",
@@ -56,5 +64,6 @@
     "dependencies": {
         "@tronsocket/types": "^0.2.0",
         "socket.io-client": "^4.8.0"
-    }
+    },
+    "license": "MIT"
 }

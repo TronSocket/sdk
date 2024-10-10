@@ -2,6 +2,8 @@
 
 ## Description
 
+The WebSocket Transaction Event Listener for Tron Blockchain Network
+
 TronSocket SDK is a library that allows you to interact with the TronSocket API. It is a simple and easy-to-use library that can be used to interact with the TronSocket API.
 
 ## Installation
