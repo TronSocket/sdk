@@ -36,20 +36,36 @@ export default class TronSocket {
         this.testnet = testnet
     }
 
-    public async connect(): Promise<boolean> {
+    public async connect(polling: boolean = false): Promise<boolean> {
         return new Promise((resolve, reject) => {
-            this.socket = io(this.socketUrl, {
+            const args: {
+                query: {
+                    token: string
+                    testnet: boolean
+                }
+                transports?: string[]
+            } = {
                 query: {
                     token: this.token,
                     testnet: this.testnet
-                }
-            })
+                },
+                transports: ['websocket']
+            }
+
+            if (polling) {
+                delete args.transports
+            }
+
+            this.socket = io(this.socketUrl, args)
+
             this.socket.on('ready', () => {
                 resolve(true)
             })
+
             this.socket.on('error', (error: EmitError) => {
                 reject(error)
             })
+
             this.socket.on('connect_error', (error) => {
                 reject(error)
             })
